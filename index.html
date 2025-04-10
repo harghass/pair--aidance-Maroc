@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Conférences Rétablissement</title>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet"/>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Quicksand', sans-serif;
+      transition: direction 0.3s;
+      background: linear-gradient(to bottom right, #f2f8ff, #e0e7ff);
+      color: #333;
+    }
+    header {
+      padding: 20px;
+      background: #4a6ee0;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .language-switch {
+      font-size: 16px;
+    }
+    select {
+      padding: 5px;
+      border-radius: 5px;
+      border: none;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .title {
+      font-size: 2em;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+    .countdown {
+      text-align: center;
+      font-size: 1.5em;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 10px;
+    }
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      justify-content: center;
+    }
+    .gallery img {
+      width: 200px;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s ease;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .faq-item {
+      margin-bottom: 15px;
+    }
+    .faq-item summary {
+      cursor: pointer;
+      font-weight: bold;
+      background: #e6ecff;
+      padding: 10px;
+      border-radius: 5px;
+    }
+    .faq-item p {
+      margin: 10px 0 0 10px;
+    }
+    .socials {
+      text-align: center;
+      padding: 20px;
+    }
+    .socials a {
+      margin: 0 10px;
+      text-decoration: none;
+      font-size: 24px;
+      color: #4a6ee0;
+    }
+    .audio-control {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    button#music-toggle {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4a6ee0;
+      color: white;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1 id="page-title">Conférences sur le Rétablissement</h1>
+    <div class="language-switch">
+      🌍 <label for="lang-select">Langue : </label>
+      <select id="lang-select">
+        <option value="fr">Français</option>
+        <option value="en">English</option>
+        <option value="ar">العربية</option>
+      </select>
+    </div>
+  </header>
+
+  <section class="section">
+    <div class="countdown" id="countdown"></div>
+
+    <div class="audio-control">
+      <audio id="bg-music" loop autoplay>
+        <source src="https://www.bensound.com/bensound-music/bensound-slowmotion.mp3" type="audio/mp3">
+      </audio>
+      <button id="music-toggle">⏸️ Pause Musique</button>
+    </div>
+
+    <div id="intro">
+      <p data-lang="fr">Le rétablissement est un chemin personnel vers une vie pleine de sens, malgré les difficultés psychiques.</p>
+      <p data-lang="en" class="hidden">Recovery is a personal journey toward a meaningful life, despite mental health challenges.</p>
+      <p data-lang="ar" class="hidden" style="direction: rtl;">التعافي هو مسار شخصي نحو حياة مليئة بالمعنى رغم التحديات النفسية.</p>
+    </div>
+
+    <div class="title" data-lang="fr">Témoignages</div>
+    <div class="title hidden" data-lang="en">Testimonials</div>
+    <div class="title hidden" data-lang="ar" style="direction: rtl;">شهادات</div>
+
+    <div class="gallery">
+      <iframe width="300" height="200" src="https://www.youtube.com/embed/MkYz1M7VwFg" allowfullscreen></iframe>
+      <iframe width="300" height="200" src="https://www.youtube.com/embed/wLX2F9v7NaE" allowfullscreen></iframe>
+    </div>
+
+    <div class="title" data-lang="fr">Galerie</div>
+    <div class="title hidden" data-lang="en">Gallery</div>
+    <div class="title hidden" data-lang="ar" style="direction: rtl;">معرض الصور</div>
+
+    <div class="gallery">
+      <img src="https://placekitten.com/300/200" alt="Image 1">
+      <img src="https://placekitten.com/301/200" alt="Image 2">
+      <img src="https://placekitten.com/302/200" alt="Image 3">
+    </div>
+
+    <div class="title" data-lang="fr">FAQ</div>
+    <div class="title hidden" data-lang="en">FAQ</div>
+    <div class="title hidden" data-lang="ar" style="direction: rtl;">الأسئلة الشائعة</div>
+
+    <div class="faq-item">
+      <details>
+        <summary data-lang="fr">Qui peut assister aux conférences ?</summary>
+        <summary class="hidden" data-lang="en">Who can attend the conferences?</summary>
+        <summary class="hidden" data-lang="ar" style="direction: rtl;">من يمكنه حضور الندوات؟</summary>
+        <p data-lang="fr">Tout le monde est bienvenu : professionnels, proches et personnes concernées.</p>
+        <p class="hidden" data-lang="en">Everyone is welcome: professionals, families and people with lived experience.</p>
+        <p class="hidden" data-lang="ar" style="direction: rtl;">الجميع مرحب بهم: المهنيون، العائلات، والأشخاص ذوو الخبرة.</p>
+      </details>
+    </div>
+
+    <div class="title" data-lang="fr">Inscription</div>
+    <div class="title hidden" data-lang="en">Registration</div>
+    <div class="title hidden" data-lang="ar" style="direction: rtl;">التسجيل</div>
+
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfO4_pKPLBrNChcFJscTD8pM0L8hdBPTB5BzZXCBf6UvEs_1g/viewform?embedded=true">Chargement…</iframe>
+  </section>
+
+  <div class="socials">
+    <a href="#" title="Facebook">📘</a>
+    <a href="#" title="Instagram">📸</a>
+    <a href="#" title="LinkedIn">💼</a>
+  </div>
+
+  <script>
+    const music = document.getElementById("bg-music");
+    const toggleBtn = document.getElementById("music-toggle");
+    let isPlaying = true;
+
+    toggleBtn.addEventListener("click", () => {
+      if (isPlaying) {
+        music.pause();
+        toggleBtn.textContent = "▶️ Reprendre Musique";
+      } else {
+        music.play();
+        toggleBtn.textContent = "⏸️ Pause Musique";
+      }
+      isPlaying = !isPlaying;
+    });
+
+    const langSelect = document.getElementById("lang-select");
+    const translatables = document.querySelectorAll("[data-lang]");
+
+    langSelect.addEventListener("change", () => {
+      const lang = langSelect.value;
+      document.body.dir = (lang === "ar") ? "rtl" : "ltr";
+      translatables.forEach(el => {
+        el.classList.toggle("hidden", el.getAttribute("data-lang") !== lang);
+      });
+    });
+
+    const countdownEl = document.getElementById("countdown");
+    const targetDate = new Date("June 1, 2025 10:00:00").getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = targetDate - now;
+
+      if (distance <= 0) {
+        countdownEl.textContent = "🎉 La conférence a commencé !";
+        return;
+      }
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((distance / 1000 / 60) % 60);
+      const seconds = Math.floor((distance / 1000) % 60);
+
+      countdownEl.textContent = `⏳ ${days}j ${hours}h ${minutes}m ${seconds}s avant le début`;
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
